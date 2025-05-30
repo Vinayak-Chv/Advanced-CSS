@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #fffafa;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: #ffe4ec;
+    padding: 15px;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+.left {
+    font-weight: bolder;
+    font-size: 1.3rem;
+    margin-left: 3rem;
+    flex: 1;
+    padding-left: 3rem;
+    color: #c2185b;
+}
+
+.mid ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.mid ul li{
+    list-style: none;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #d63384;
+    transition: color 0.5s ease;
+    cursor: pointer;
+}
+
+.mid ul li:hover {
+    color: #ffb6c1;
+}
+
+.right {
+    margin-left: 3rem;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5rem;
+}
+
+.right #btn {
+    background: linear-gradient(to bottom, #ff66cc, #ffffff);
+    border: none;
+    padding: 12px 24px;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#btn::before {
+    content: '';
+    position: absolute;
+    background: radial-gradient(circle, rgba(255, 105, 180, 0.4), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+#btn:hover::before {
+    opacity: 1;
+}
+
+#btn:hover {
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.8), 0 0 30px rgba(255, 105, 180, 0.6);
+}
+
+/* 
+Screen - Only Applies to the computer screens like mobile and Laptop.
+Print - Only Applies to Print Media
+Speech - Only Applies to Screen Readers (Voice Recognition)
+All - Applies to all Above Options (Don't Specify any thing for all).
+*/
+@media (max-width: 1231px) {
+    header .left {
+        font-size: 1rem;
+    }
+
+    header .mid ul li, .right #btn {
+        font-size: 0.8rem;
+    }
+}
